@@ -34,7 +34,7 @@ void merge_sort(std::vector<T>& vec, int begin, int end) {
 }
 
 int main() {
-  int n = 10000000;
+  int n = 20;
   std::vector<int> vec(n);
   for (int i=0; i<n; i++) {
     vec[i] = rand() % (10 * n);
@@ -44,14 +44,8 @@ int main() {
 #pragma omp parallel
 #pragma omp single
   merge_sort(vec, 0, n-1);
-  int is_sort = 0;
-  /*
   for (int i=0; i<n; i++) {
     printf("%d ",vec[i]);
   }
-  */
-  for (int i=0; i<n-1; i++) {
-    is_sort += vec[i] > vec[i+1];
-  }
-  printf("%d\n", is_sort);
+  printf("\n");
 }
