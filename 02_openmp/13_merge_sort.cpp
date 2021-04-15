@@ -38,7 +38,7 @@ int main() {
   std::vector<int> vec(n);
   for (int i=0; i<n; i++) {
     vec[i] = rand() % (10 * n);
-    //printf("%d ",vec[i]);
+    printf("%d ",vec[i]);
   }
   printf("\n");
 #pragma omp parallel
